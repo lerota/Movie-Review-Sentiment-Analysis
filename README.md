@@ -1,4 +1,49 @@
 # Movie-Review-Sentiment-Analysis
+
+This document can help you use the following repository.
+https://github.com/Sapphirine/Movie-Review-Sentiment-Analysis
+
+Part A) the folder contains a well-built online movie website.  
+
+    To run this online movie website, you need to get an access to a LAMP server. LAMP stands for Linux, Apache, MySQL, PHP. 
+
+    First, copy the content of this folder to the root of your server, e.g. /var/www/html.
+    
+    Then, execute movie_sc.sql and populate.sql subsequently to create the MySQL database for the movie website.
+
+    Finally, open a terminal and type in the command “ifconfig” to see the IP address of your server. Find another computer, and type in the above address, you should be able to browse the movie website now.
+
+Part B) the folder contains python files and datasets related to sentiment analysis of reviews. 
+
+    critics.csv 
+    
+    This is the Rotten Tomatoes reviews dataset. We use this dataset to predict sentiment labels of each review. 
+    
+    aclImdb
+    
+    This is the Large Movie Review Dataset v1.0 from http://ai.stanford.edu/~amaas/data/sentiment/, which we use as training dataset and test dataset. There is one well-written README file in the folder describing the dataset.
+    
+    Sentiment Analysis
+    
+    Including all the files doing sentiment analysis of reviews. To run the .py files, first you need to install nltk toolkit, scikit-learn toolkit and tabulate package. You can try
+    
+    $ pip install <package-name>
+    
+    or install packages from official website.
+
+    build_csv.py
+
+    This is the python script to fetch critics movie reviews from Rotten Tomatoes API into “critics.csv”, which is the dataset for the online movie website. To run this file, first you must have a Rotten Tomatoes API key, please go to http://developer.rottentomatoes.com/member/register to register one. After you get your API key, fill it in “api_key” row to replace ‘YOUR KEY HERE’ in the code. Besides, you need to install python libraries numpy, scikit-learn, json, pandas, matplotlib, requests.
+
+    Then run csvToTxt.py to extract the Rotten Tomatoes reviews data. Notice that you need to change all the file path to your local path. For example:
+    
+    change dir_name = '/Users/tianhan/Documents/ColumbiaU/Spring15/Adv_Big_Data_Analytics/Project/Reviews'
+    
+    to dir_name = '/Users/<your-username>/.../Reviews'
+    
+    Then you can run evaluation.py to see the evaluation results of different algorithms, run classifyUpdateLabelsInDataset.py to update the sentiment labels of reviews in Rotten Tomatoes reviews dataset, or run classifySingleReview.py to classify a single review.
+    
+    
 Objective: 
 ----------
 Develop our own online movie shopping website/Implement movie review sentiment analysis to improve user experience. 
